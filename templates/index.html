@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Food Online Receipt</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Food Online Receipt</h1>
+
+        <div class="card">
+            <h2>Receipt Uploader</h2>
+            <form id="upload-form" enctype="multipart/form-data">
+                <input type="file" id="file" name="file" accept="image/*"/>
+                <button type="submit">Upload</button>
+            </form>
+
+            <pre id="result">No receipt uploaded yet.</pre>
+        </div>
+
+        <div class="card">
+            <h2>Ask information related to your receipt:</h2>
+            <input type="text" id="question" placeholder="What's on your mind?"/>
+            <button id="ask-btn">Ask</button>
+            <pre id="answer">No question asked yet.</pre>
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+
+</body>
+</html>
