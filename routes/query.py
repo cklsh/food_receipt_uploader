@@ -29,7 +29,7 @@ def query_receipts(question: str = Query(...)):
         result = [{"item": i, "price": p} for i, p in data]
         return {"question": question, "result": result}
     
-    # ex: Total expenses on a date
+    # ex: Total expenses on date
     date_query = re.search(r"(\d{4})[/-](\d{1,2})[/-](\d{1,2})", q)
     if "total" in q or "expense" in q:
         if date_query:
@@ -43,7 +43,7 @@ def query_receipts(question: str = Query(...)):
 
             return {"question": q, "total_expense": total}
 
-    # ex: Where did I buy [item] from last [n] day
+    # ex: Where did I buy [item] from last [n] days
     item_query = re.search(r"(?:buy|eat)\s+([a-zA-Z\s]+?)(?:\s+from|\s+on|$)", q, re.IGNORECASE)
     if "where" in q and item_query:
         item = item_query.group(1).strip()

@@ -2,7 +2,6 @@ from fastapi import APIRouter, File, UploadFile
 import os, sqlite3
 from utils.ocr_reader import text_extract_from_image
 from utils.receipt_parser import parse_receipt_text
-import re
 
 router = APIRouter()
 UPLOAD_DIR = "data/uploads"

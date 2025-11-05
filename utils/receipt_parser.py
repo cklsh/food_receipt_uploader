@@ -9,8 +9,8 @@ def parse_receipt_text(text: str) -> Dict:
     items = None
 
     date_rgx = re.search(r"\b(\d{1,2}[/-]\d{1,2}[/-]\d{2,4})\b", text)
-    total_rgx = re.search(r"(?:Total|TOTAL|Grand\s*Total)[^\d]*(\d[\d.,]*)",text)
-    store_rgx = re.search(r"^(.*?)\n", text) # first line as store name
+    total_rgx = re.search(r"(?:Total|TOTAL|Grand\s*Total)[^\d]*(\d[\d.,]*)", text)
+    store_rgx = re.search(r"^(.*?)\n", text)  #first line as store name
     item_pattern = r"\d+\s+([A-Za-z\s]+)\s+[\d,.]+"
     items = re.findall(item_pattern, text)
 
@@ -29,7 +29,7 @@ def parse_receipt_text(text: str) -> Dict:
         date = parsed_date.strftime("%Y/%m/%d")
     if total_rgx:
         total_str = total_rgx.group(1)
-        total_str = total_str.replace('.', '').replace(',', '')  #clean total from seperator
+        total_str = total_str.replace('.', '').replace(',', '')  # clean total from seperator
         total = int(total_str)
         print(total)
 

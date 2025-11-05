@@ -1,12 +1,8 @@
 import sqlite3
-import pytesseract
-import io
 import os
 
-from PIL import Image
 from routes import upload, query
-from utils.receipt_parser import parse_receipt_text
-from fastapi import FastAPI, UploadFile, File, Request
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
