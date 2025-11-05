@@ -26,7 +26,7 @@ jobs:
 
     - name: Lint python code
       run: |
-        flake8 backend
+        flake8 .
 
     - name: Build Docker image
       run: docker build -t food-online-recipe .
